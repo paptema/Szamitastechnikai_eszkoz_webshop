@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [MatButtonModule, RouterLink, CommonModule],
+  imports: [MatButtonModule, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
