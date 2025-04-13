@@ -1,0 +1,65 @@
+nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    gap: 30px;
+}
+
+$szovegszin: rgb(71, 4, 4);
+
+a {
+    text-decoration: none;
+    color: $szovegszin;
+    font-size: 25px;
+}
+
+mat-sidenav-container {
+    height: 100%;
+    background-color: #cf440868;
+}
+
+mat-toolbar{
+    background-color: #d94343;
+    color: white;
+    mat-icon {
+        color: $szovegszin;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    max-width: 100vh;
+    border-radius: 50px;
+}
+
+mat-sidenav {
+    border-radius: 0;
+    position : end;
+}
+
+.menu-toggle-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle-button {
+        display: block;
+    }
+    
+    nav ul {
+        display: none;
+    }
+}

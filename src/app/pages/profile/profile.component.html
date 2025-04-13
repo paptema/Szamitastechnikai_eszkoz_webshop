@@ -1,0 +1,32 @@
+<div class="profile-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>User Profile</mat-card-title>
+      <mat-form-field appearance="outline">
+        <mat-label>Select Profile</mat-label>
+        <mat-select [value]="selectedIndex" (selectionChange)="reload($event.value)">
+          @for (profile of ProfileObject; track $index) {
+            <mat-option [value]="$index">{{profile.id}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="profile-info">
+        <div class="avatar-container">
+          <div class="avatar mat-elevation-z2">
+            {{ProfileObject[selectedIndex].avatar}}
+          </div>
+        </div>
+        <div class="user-details">
+          <h3 class="user-name">{{ProfileObject[selectedIndex].user_name}}</h3>
+          <div class="user-email">
+            <mat-icon>email</mat-icon>
+            <span>{{ProfileObject[selectedIndex].email}}</span>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
