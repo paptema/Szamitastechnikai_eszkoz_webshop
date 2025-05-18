@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -45,7 +46,7 @@ export class LoginComponent {
       
       setTimeout(() => {
         window.location.href = '/home';
-      }, 3000);
+      }, 1000);
     } else {
       this.loginError = 'Érvénytelen email vagy jelszó!';
     }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Szamitastechnikai_eszkoz_webshop": {
+    "szamitastechnikai-eszkoz-webshop": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -42,7 +42,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "1000kB",
                   "maximumError": "1MB"
                 },
                 {
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Szamitastechnikai_eszkoz_webshop:build:production"
+              "buildTarget": "szamitastechnikai-eszkoz-webshop:build:production"
             },
             "development": {
-              "buildTarget": "Szamitastechnikai_eszkoz_webshop:build:development"
+              "buildTarget": "szamitastechnikai-eszkoz-webshop:build:development"
             }
           },
           "defaultConfiguration": "development"
