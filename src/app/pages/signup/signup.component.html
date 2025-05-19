@@ -43,6 +43,12 @@
         <mat-icon matSuffix>lock</mat-icon>
       </mat-form-field>
 
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" formControlName="username">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+
       <div class="buttons-row">
         <button mat-flat-button color="primary" type="submit">Regisztráció</button>
         <button mat-flat-button [routerLink]="['/login']">Már van profilod?</button>

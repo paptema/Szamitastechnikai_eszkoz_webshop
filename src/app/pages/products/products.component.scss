@@ -1,0 +1,11 @@
+.products-container {
+  padding: 32px;
+}
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.product-card {
+  width: 300px;
+}

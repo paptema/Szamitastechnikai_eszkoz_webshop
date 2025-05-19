@@ -2,31 +2,43 @@
   <mat-card>
     <mat-card-header>
       <mat-card-title>User Profile</mat-card-title>
-      <mat-form-field appearance="outline">
-        <mat-label>Select Profile</mat-label>
-        <mat-select [value]="selectedIndex" (selectionChange)="reload($event.value)">
-          @for (profile of ProfileObject; track $index) {
-            <mat-option [value]="$index">{{profile.id}}</mat-option>
-          }
-        </mat-select>
-      </mat-form-field>
     </mat-card-header>
-
     <mat-card-content>
-      <div class="profile-info">
-        <div class="avatar-container">
-          <div class="avatar mat-elevation-z2">
-            {{ProfileObject[selectedIndex].avatar}}
+      @if (isLoading) {
+        <div class="loading-container">
+          <p>Loading profile data...</p>
+        </div>
+      } @else if (user) {
+        <div class="profile-info">
+          <div class="avatar-container">
+            <div class="avatar mat-elevation-z2">
+              {{ getUserInitials() }}
+            </div>
+          </div>
+          <div class="user-details">
+            <h3 class="user-name">
+              {{ user.name.firstname | capitalize }} {{ user.name.lastname | capitalize }}
+            </h3>
+            <div class="user-username" *ngIf="user.username">
+              <mat-icon>person</mat-icon>
+              <span>{{ user.username }}</span>
+            </div>
+            <div class="user-email">
+              <mat-icon>email</mat-icon>
+              <span>{{ user.email }}</span>
+            </div>
+            <div class="user-role" *ngIf="role">
+              <mat-icon>verified_user</mat-icon>
+              <span>{{ role | capitalize }}</span>
+            </div>
           </div>
         </div>
-        <div class="user-details">
-          <h3 class="user-name">{{ProfileObject[selectedIndex].user_name}}</h3>
-          <div class="user-email">
-            <mat-icon>email</mat-icon>
-            <span>{{ProfileObject[selectedIndex].email}}</span>
-          </div>
+      } @else {
+        <div class="empty-state">
+          <mat-icon>person_off</mat-icon>
+          <p>No user profile found. Please log in.</p>
         </div>
-      </div>
+      }
     </mat-card-content>
   </mat-card>
 </div>

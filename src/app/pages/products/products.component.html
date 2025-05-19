@@ -1,0 +1,18 @@
+<div class="products-container">
+  <h1>Termékek</h1>
+  <div class="products-list">
+    <ng-container *ngIf="products$ | async as products; else loading">
+      <mat-card *ngFor="let product of products" class="product-card">
+        <img mat-card-image [src]="getImagePath(product.imageUrl)" [alt]="product.name" />
+        <mat-card-title>{{ product.name }}</mat-card-title>
+        <mat-card-content>
+          <p>{{ product.description }}</p>
+          <p><strong>Ár:</strong> {{ product.price | currencyHuf }}</p>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+    <ng-template #loading>
+      <p>Betöltés...</p>
+    </ng-template>
+  </div>
+</div>

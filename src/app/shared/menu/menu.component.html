@@ -21,4 +21,13 @@
         <span matListItemTitle>Logout</span>
       </a>
     }
+  <li *ngIf="userName">
+    <span>Üdv, {{ userName }}!</span>
+  </li>
+  <li>
+    <a routerLink="/profile" (click)="onProfileClick()">Profil</a>
+  </li>
+  <li>
+    <a href="#" (click)="logout()">Kijelentkezés</a>
+  </li>
 </mat-nav-list>
